@@ -2,14 +2,14 @@
 Optimización de rutas en grafos con restricción de arista obligatoria, incluyendo generación de datos sintéticos y validación de escenarios.
 
 
-Descripción del problema
+## Descripción del problema
 
 Este proyecto resuelve un problema de optimización de rutas en un grafo dirigido ponderado.
 
 El objetivo es encontrar la ruta de menor costo entre un nodo origen y un nodo destino, incluyendo obligatoriamente una arista específica (u, v).
 
 
-Caso de negocio
+## Caso de negocio
 
 Este problema puede aplicarse a escenarios como redes de transferencias financieras, donde:
 
@@ -19,7 +19,7 @@ Este problema puede aplicarse a escenarios como redes de transferencias financie
  - La arista obligatoria representa una restricción (ej. pasar por una cámara de compensación)
 
 
-Enfoque de solución
+## Enfoque de solución
 
 El problema se resolvió dividiéndolo en tres partes:
 
@@ -30,7 +30,7 @@ El problema se resolvió dividiéndolo en tres partes:
 Para calcular rutas mínimas se utilizó el algoritmo de Dijkstra, adecuado para grafos con pesos positivos.
 
 
-Estructura del grafo
+## Estructura del grafo
 
 El grafo se representa como un diccionario en Python:
 
@@ -48,14 +48,14 @@ grafo = {
 Cada nodo contiene una lista de conexiones con su costo.
 
 
-Generación de datos
+## Generación de datos
 
 El dataset es sintético y se genera mediante la función:
 
 grafo = generar_grafo()
 
 
-Justificación del dataset
+## Justificación del dataset
 
 El dataset fue diseñado para validar distintos escenarios:
 
@@ -64,17 +64,20 @@ Nodos desconectados → valida casos sin solución
 Aristas inexistentes → valida casos borde
 
 
-Cómo ejecutar el proyecto
+## Cómo ejecutar el proyecto
 
 1. Requisitos
  - Python 3.x
  - No se requieren librerías externas
 
 2. Ejecutar el script
+
 Desde la terminal:
+
 python main.py
 
 3. Qué hace el script
+
 El archivo main.py ejecuta automáticamente tres escenarios de prueba:
  - Caso válido
  - Caso sin solución
@@ -83,7 +86,7 @@ El archivo main.py ejecuta automáticamente tres escenarios de prueba:
 Y muestra los resultados la terminal.
 
 
-Entradas de la función principal:
+## Entradas de la función principal:
 
 ruta_minima_con_arista_obligatoria(grafo, origen, destino, nodo_u, nodo_v)
 
@@ -91,7 +94,7 @@ ruta_minima_con_arista_obligatoria(grafo, origen, destino, nodo_u, nodo_v)
  - destino: nodo final
  - (nodo_u, nodo_v): arista obligatoria
 
-Salidas
+## Salidas
 
 La función devuelve un diccionario con:
 {
@@ -105,41 +108,47 @@ La función devuelve un diccionario con:
 }
 
 
-Escenarios de prueba incluidos:
+## Escenarios de prueba incluidos:
 
 Caso 1: Solución válida
+
 Entrada:
  - Origen: A
  - Destino: F
  - Arista obligatoria: B → D
+
 Salida:
  - Ruta: A → C → B → D → E → F
  - Costo total: 13
  - Arista incluida: True
 
 Caso 2: Sin solución
+
 Entrada:
  - Origen: X
  - Destino: F
  - Arista obligatoria: B → D
+
 Salida:
  - No existe solución válida
 
 Caso 3: Caso borde
+
 Entrada:
  - Origen: A
  - Destino: F
  - Arista obligatoria: C → A
+
 Salida:
  - No existe solución válida
 
-Validación de la arista obligatoria:
+## Validación de la arista obligatoria:
 
 Se implementa una función que verifica explícitamente que la arista (u, v) aparece en la ruta final:
 
 validar_arista_obligatoria(ruta, nodo_u, nodo_v)
 
-Preguntas clave que responde esta solución:
+## Preguntas clave que responde esta solución:
 
 ¿Cómo mapea el problema a negocio?
 → Modela redes de transferencia o logística con restricciones.
@@ -159,7 +168,9 @@ Preguntas clave que responde esta solución:
 ¿Qué se mejoraría?
 → Soporte para múltiples restricciones y mejor performance.
 
-Reproducibilidad:
+## Reproducibilidad:
 Este proyecto es completamente reproducible ejecutando:
+
 python main.py
+
 El dataset se genera automaticamente dentro del código.
