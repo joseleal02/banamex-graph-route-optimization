@@ -60,7 +60,9 @@ grafo = generar_grafo()
 El dataset fue diseñado para validar distintos escenarios:
 
 Múltiples rutas posibles → valida que el algoritmo optimiza correctamente
+
 Nodos desconectados → valida casos sin solución
+
 Aristas inexistentes → valida casos borde
 
 
