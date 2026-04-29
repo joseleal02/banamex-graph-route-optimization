@@ -29,13 +29,16 @@ Para calcular rutas mínimas se utilizó el algoritmo de Dijkstra, adecuado para
 Estructura del grafo
 
 El grafo se representa como un diccionario en Python:
+
 grafo = {
+
     "A": [("B", 4), ("C", 2)],
     "B": [("D", 5)],
     "C": [("B", 1), ("D", 8)],
     "D": [("E", 2)],
     "E": [("F", 3)],
     "F": []
+    
 }
 
 Cada nodo contiene una lista de conexiones con su costo.
