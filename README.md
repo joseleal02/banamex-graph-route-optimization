@@ -174,3 +174,7 @@ Este proyecto es completamente reproducible ejecutando:
 python main.py
 
 El dataset se genera automaticamente dentro del código.
+
+A continuación se muestra un ejemplo de la salida al ejecutar el script:
+
+![Resultado](Resultado.png)
