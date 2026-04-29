@@ -114,7 +114,9 @@ Salida:
  - No existe solución válida
 
 Validación de la arista obligatoria:
+
 Se implementa una función que verifica explícitamente que la arista (u, v) aparece en la ruta final:
+
 validar_arista_obligatoria(ruta, nodo_u, nodo_v)
 
 Preguntas clave que responde esta solución:
