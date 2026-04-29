@@ -1,11 +1,13 @@
 # banamex-graph-route-optimization
 Optimización de rutas en grafos con restricción de arista obligatoria, incluyendo generación de datos sintéticos y validación de escenarios.
 
+
 Descripción del problema
 
 Este proyecto resuelve un problema de optimización de rutas en un grafo dirigido ponderado.
 
 El objetivo es encontrar la ruta de menor costo entre un nodo origen y un nodo destino, incluyendo obligatoriamente una arista específica (u, v).
+
 
 Caso de negocio
 
@@ -16,6 +18,7 @@ Este problema puede aplicarse a escenarios como redes de transferencias financie
  - Los costos representan comisiones, tiempo o riesgo
  - La arista obligatoria representa una restricción (ej. pasar por una cámara de compensación)
 
+
 Enfoque de solución
 
 El problema se resolvió dividiéndolo en tres partes:
@@ -25,6 +28,7 @@ El problema se resolvió dividiéndolo en tres partes:
  - Encontrar la ruta más corta desde nodo_v → destino
 
 Para calcular rutas mínimas se utilizó el algoritmo de Dijkstra, adecuado para grafos con pesos positivos.
+
 
 Estructura del grafo
 
@@ -43,10 +47,13 @@ grafo = {
 
 Cada nodo contiene una lista de conexiones con su costo.
 
+
 Generación de datos
 
 El dataset es sintético y se genera mediante la función:
+
 grafo = generar_grafo()
+
 
 Justificación del dataset
 
@@ -56,7 +63,9 @@ Múltiples rutas posibles → valida que el algoritmo optimiza correctamente
 Nodos desconectados → valida casos sin solución
 Aristas inexistentes → valida casos borde
 
+
 Cómo ejecutar el proyecto
+
 1. Requisitos
  - Python 3.x
  - No se requieren librerías externas
@@ -70,23 +79,31 @@ El archivo main.py ejecuta automáticamente tres escenarios de prueba:
  - Caso válido
  - Caso sin solución
  - Caso borde
+
 Y muestra los resultados la terminal.
 
+
 Entradas de la función principal:
+
 ruta_minima_con_arista_obligatoria(grafo, origen, destino, nodo_u, nodo_v)
+
  - origen: nodo inicial
  - destino: nodo final
  - (nodo_u, nodo_v): arista obligatoria
 
 Salidas
+
 La función devuelve un diccionario con:
 {
+
     "estatus": str,
     "ruta": list,
     "costo_total": int,
     "arista_obligatoria": tuple,
     "arista_aparece_en_ruta": bool
+    
 }
+
 
 Escenarios de prueba incluidos:
 
